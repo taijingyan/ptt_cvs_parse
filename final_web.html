@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Convenience Store Product Evaluation</title>
+    <style type="text/css">
+        a {
+            padding: 5px 8px;
+            margin: 5px 2px;
+            display: inline-block;
+            background-color: white;
+            color: #3C3C3C;
+            text-decoration: none;
+            border-style: solid;
+            border-width: 0.1px;
+        }
+        
+        a:hover {
+            background-color: black;
+            color: white;
+        }
+        
+        .center {
+            margin: auto;
+            width: 400px;
+        }
+        
+        .footer_font {
+            color: darkgrey;
+            font-size: 10px;
+            text-align: center;
+        }
+        
+        .list_item_color {
+            color: #D1003B;
+        }
+        
+        h1 {
+            font-size: 23px;
+            color: black;
+            text-align: center;
+        }
+        
+        h2 {
+            font-size: 14px;
+            color: #333333;
+            text-align: center;
+        }
+        
+        h3 {
+            font-size: 12px;
+            color: #646464;
+            text-align: left;
+            font-family: Microsoft JhengHei;
+        }
+        
+        h4 {
+            font-size: 14px;
+            color: darkgrey;
+            text-align: center;
+            font-family: Microsoft JhengHei;
+        }
+        
+        list {
+            font-size: 14px;
+            color: #646464;
+            text-align: center;
+            font-family: Microsoft JhengHei;
+        }
+        
+        .category_list {
+            font-size: 12px;
+            color: #646464;
+            text-align: center;
+            font-family: Microsoft JhengHei;
+        }
+        
+        h5 {
+            padding: 0px px;
+            font-size: 18px;
+            color: black;
+            text-align: center;
+        }
+        
+        h6 {
+            font-size: 14px;
+            color: #646464;
+            text-align: center;
+            font-family: Microsoft JhengHei;
+        }        
+        td {
+            padding-left: 18px
+        }
+        
+        #DIV1 {
+            width: 180px;
+            line-height: 10px;
+            padding: 20px;
+            background-color: #EEE9E7;
+            margin: 13px;
+            padding-bottom: 10px;
+            background-color: gainsboro;
+        }
+        
+        #DIV2 {
+            width: 180px;
+            line-height: 9px;
+            padding: 0px;
+            margin: 0;
+            text-align: center;
+        }
+        
+        #header {
+            height: 70px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            line-height: 10px;
+            padding-top: 2px;
+        }
+        
+        #Left {
+            width: 405px;
+            line-height: 23px;
+            padding: 10px;
+            background-color: #EEE9E7;
+            margin: 13px;
+            float: left;
+        }
+        
+        #left_content {
+            width: 405px;
+            line-height: 35px;
+            padding: 2px;
+            text-align: center;
+            font-family: Microsoft JhengHei;
+            font-size: 12px;
+            float: left;
+        }
+        
+        #category_content {
+            width: 250px;
+            line-height: 35px;
+            padding: px;
+            text-align: center;
+            font-family: Microsoft JhengHei;
+            font-size: 16px;
+            float: right;
+        }
+        
+        #reserve {
+            float: right;
+        }
+        
+        #bottom {
+            clear: both;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div id="header">
+        <section>
+            <header>
+                <h1>便利商店買什麼？</h1>
+                <h4>超商商品評價檢索平台</h4>
+            </header>
+        </section>
+    </div>
+    <section>
+        <div>
+
+
+            <div id="Left">
+                <h5>評價排行</h5>
+                <hr>
+                <div id="left_content">
+                    <table class="list">
+                        <thead>
+                            <tr>
+                                <th title="Field #1">排行</th>
+                                <th title="Field #2">分數</th>
+                                <th title="Field #3">品名</th>
+                                <th title="Field #4">商店</th>
+                                <th title="Field #5">討論度</th>
+                                <th title="Field #6">價格</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="left">1</td>
+                                <td align="right" style="color:#D1003B;">100</td>
+                                <td>椰香紫芋西米露</td>
+                                <td>711</td>
+                                <td align="right">55</td>
+                                <td align="right">35</td>
+                            </tr>
+                            <tr>
+                                <td align="left">2</td>
+                                <td align="right" style="color:#D1003B;">99</td>
+                                <td>OREA 拿鐵冰沙</td>
+                                <td>全家</td>
+                                <td align="right">25</td>
+                                <td align="right">39</td>
+                            </tr>
+                            <tr>
+                                <td align="left">3</td>
+                                <td align="right" style="color:#D1003B;">99</td>
+                                <td>KIRIN 冰結調酒 西西里檸檬風味</td>
+                                <td>711</td>
+                                <td align="right">15</td>
+                                <td align="right">49</td>
+                            </tr>
+                            <tr>
+                                <td align="left">4</td>
+                                <td align="right" style="color:#D1003B;">95</td>
+                                <td>午后時光 鮮奶茶</td>
+                                <td>711</td>
+                                <td align="right">11</td>
+                                <td align="right">39</td>
+                            </tr>
+                            <tr>
+                                <td align="left">5</td>
+                                <td align="right" style="color:#D1003B;">92</td>
+                                <td>泰山 檸檬鮮果水</td>
+                                <td>全家</td>
+                                <td align="right">49</td>
+                                <td align="right">25</td>
+                            </tr>
+                            <tr>
+                                <td align="left">6</td>
+                                <td align="right" style="color:#D1003B;">90</td>
+                                <td>北海道牛奶燕麥麵包</td>
+                                <td>全家</td>
+                                <td align="right">10</td>
+                                <td align="right">32</td>
+                            </tr>
+                            <tr>
+                                <td align="left">7</td>
+                                <td align="right" style="color:#D1003B;">88</td>
+                                <td>山真海味 客家梅菜肉片湯</td>
+                                <td>OK</td>
+                                <td align="right">13</td>
+                                <td align="right">55</td>
+                            </tr>
+                            <tr>
+                                <td align="left">8</td>
+                                <td align="right" style="color:#D1003B;">86</td>
+                                <td>現萃茶 一顆檸檬青</td>
+                                <td>711</td>
+                                <td align="right">6</td>
+                                <td align="right">60</td>
+                            </tr>
+                            <tr>
+                                <td align="left">9</td>
+                                <td align="right" style="color:#D1003B;">86</td>
+                                <td>北海道哈密瓜雪糕</td>
+                                <td>全家</td>
+                                <td align="right">2</td>
+                                <td align="right">35</td>
+                            </tr>
+                            <tr>
+                                <td align="left">10</td>
+                                <td align="right" style="color:#D1003B;">85</td>
+                                <td>小美鑽石冰 梅子香草風味</td>
+                                <td>萊爾富</td>
+                                <td align="right">7</td>
+                                <td align="right">25</td>
+                            </tr>
+                            <tr>
+                                <td align="left">11</td>
+                                <td align="right" style="color:#D1003B;">85</td>
+                                <td>泰式紅咖哩飯</td>
+                                <td>全家</td>
+                                <td align="right">14</td>
+                                <td align="right">70</td>
+                            </tr>
+                            <tr>
+                                <td align="left">12</td>
+                                <td align="right" style="color:#D1003B;">85</td>
+                                <td>龍蝦風味沙拉</td>
+                                <td>全家</td>
+                                <td align="right">2</td>
+                                <td align="right">39</td>
+                            </tr>
+                            <tr>
+                                <td align="left">13</td>
+                                <td align="right" style="color:#D1003B;">83</td>
+                                <td>蔥鹽燒肉飯糰</td>
+                                <td>711</td>
+                                <td align="right">10</td>
+                                <td align="right">30</td>
+                            </tr>
+                            <tr>
+                                <td align="left">14</td>
+                                <td align="right" style="color:#D1003B;">83</td>
+                                <td>鮪魚沙拉夾心吐司</td>
+                                <td>全家</td>
+                                <td align="right">21</td>
+                                <td align="right">35</td>
+                            </tr>
+                            <tr>
+                                <td align="left">15</td>
+                                <td align="right" style="color:#D1003B;">83</td>
+                                <td>清粥小菜</td>
+                                <td>711</td>
+                                <td align="right">77</td>
+                                <td align="right">69</td>
+                            </tr>
+                            <tr>
+                                <td align="left">16</td>
+                                <td align="right" style="color:#D1003B;">83</td>
+                                <td>貝禮詩 草莓奶酒抹茶</td>
+                                <td>全家</td>
+                                <td align="right">25</td>
+                                <td align="right">79</td>
+                            </tr>
+                            <tr>
+                                <td align="left">17</td>
+                                <td align="right" style="color:#D1003B;">82</td>
+                                <td>台灣水果茶</td>
+                                <td>711</td>
+                                <td align="right">11</td>
+                                <td align="right">65</td>
+                            </tr>
+                            <tr>
+                                <td align="left">18</td>
+                                <td align="right" style="color:#D1003B;">81</td>
+                                <td>摩卡可可脆皮泡芙</td>
+                                <td>全家</td>
+                                <td align="right">22</td>
+                                <td align="right">42</td>
+                            </tr>
+                            <tr>
+                                <td align="left">19</td>
+                                <td align="right" style="color:#D1003B;">82</td>
+                                <td>辣蕃茄乳酪牛肉義大利麵</td>
+                                <td>全家</td>
+                                <td align="right">10</td>
+                                <td align="right">85</td>
+                            </tr>
+                            <tr>
+                                <td align="left">20</td>
+                                <td align="right" style="color:#D1003B;">80</td>
+                                <td>模範生點心麵 大腸麵線風味</td>
+                                <td>711</td>
+                                <td align="right">27</td>
+                                <td align="right">39</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+
+            <div id="Left">
+                <h5>討論度排行</h5>
+                <hr>
+                <div id="left_content">
+                    <table class="list">
+                        <div>
+                            <table class="list">
+                                <thead>
+                                    <tr>
+                                        <th title="Field #1">排行</th>
+                                        <th title="Field #2">討論度</th>
+                                        <th title="Field #3">品名</th>
+                                        <th title="Field #4">評分</th>
+                                        <th title="Field #5">商店</th>
+                                        <th title="Field #6">價格</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td align="left">1</td>
+                                        <td align="right" style="color:#D1003B;">397</td>
+                                        <td>午後紅茶x小熊維尼</td>
+                                        <td align="right">80</td>
+                                        <td>711</td>
+                                        <td align="right">199</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">2</td>
+                                        <td align="right" style="color:#D1003B;">264</td>
+                                        <td>全家x鎮瀾宮保庇卡</td>
+                                        <td align="right">100</td>
+                                        <td>全家</td>
+                                        <td align="right">100</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">3</td>
+                                        <td align="right" style="color:#D1003B;">181</td>
+                                        <td>海尼根0.0零酒精啤酒</td>
+                                        <td align="right">90</td>
+                                        <td>711</td>
+                                        <td align="right">38</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">4</td>
+                                        <td align="right" style="color:#D1003B;">163</td>
+                                        <td>生滾海鮮煲粥</td>
+                                        <td align="right">85</td>
+                                        <td>全家</td>
+                                        <td align="right">65</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">5</td>
+                                        <td align="right" style="color:#D1003B;">148</td>
+                                        <td>義美 杏仁巧克力球</td>
+                                        <td align="right">95</td>
+                                        <td>711</td>
+                                        <td align="right">30</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">6</td>
+                                        <td align="right" style="color:#D1003B;">135</td>
+                                        <td>蠟筆小新 悠遊卡</td>
+                                        <td align="right">100</td>
+                                        <td>711</td>
+                                        <td align="right">100</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">7</td>
+                                        <td align="right" style="color:#D1003B;">118</td>
+                                        <td>川味麻婆燒豆腐燴飯</td>
+                                        <td align="right">25</td>
+                                        <td>全家</td>
+                                        <td align="right">65</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">8</td>
+                                        <td align="right" style="color:#D1003B;">115</td>
+                                        <td>植物肉起司堡</td>
+                                        <td align="right">80</td>
+                                        <td>全家</td>
+                                        <td align="right">59</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">9</td>
+                                        <td align="right" style="color:#D1003B;">114</td>
+                                        <td>Kakao 大頭馬克杯</td>
+                                        <td align="right">100</td>
+                                        <td>全家</td>
+                                        <td align="right">199</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">10</td>
+                                        <td align="right" style="color:#D1003B;">113</td>
+                                        <td>鐵觀音霜淇淋</td>
+                                        <td align="right">100</td>
+                                        <td>全家</td>
+                                        <td align="right">29</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">11</td>
+                                        <td align="right" style="color:#D1003B;">112</td>
+                                        <td>紅茶花傳 皇家橙茶</td>
+                                        <td align="right">90</td>
+                                        <td>711</td>
+                                        <td align="right">29</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">12</td>
+                                        <td align="right" style="color:#D1003B;">109</td>
+                                        <td>高校餐盒</td>
+                                        <td align="right">63</td>
+                                        <td>全家</td>
+                                        <td align="right">99</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">13</td>
+                                        <td align="right" style="color:#D1003B;">108</td>
+                                        <td>德國boy 自動傘</td>
+                                        <td align="right">0</td>
+                                        <td>全家</td>
+                                        <td align="right">499</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">14</td>
+                                        <td align="right" style="color:#D1003B;">104</td>
+                                        <td>新極上御飯糰 帝王鮭</td>
+                                        <td align="right">10</td>
+                                        <td>711</td>
+                                        <td align="right">42</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">15</td>
+                                        <td align="right" style="color:#D1003B;">100</td>
+                                        <td>香蒜白酒蛤蜊義大利麵</td>
+                                        <td align="right">60</td>
+                                        <td>711</td>
+                                        <td align="right">79</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">16</td>
+                                        <td align="right" style="color:#D1003B;">99</td>
+                                        <td>卡迪那 四重脆起司風味</td>
+                                        <td align="right">62</td>
+                                        <td>全家</td>
+                                        <td align="right">30</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">17</td>
+                                        <td align="right" style="color:#D1003B;">96</td>
+                                        <td>紅茶花傳 皇家橙茶</td>
+                                        <td align="right">90</td>
+                                        <td>全家</td>
+                                        <td align="right">29</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">18</td>
+                                        <td align="right" style="color:#D1003B;">96</td>
+                                        <td>珍珠奶茶可樂果</td>
+                                        <td align="right">30</td>
+                                        <td>全家</td>
+                                        <td align="right">45</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">19</td>
+                                        <td align="right" style="color:#D1003B;">92</td>
+                                        <td>川味麻婆燒豆腐燴飯</td>
+                                        <td align="right">0</td>
+                                        <td>全家</td>
+                                        <td align="right">65</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">20</td>
+                                        <td align="right" style="color:#D1003B;">90</td>
+                                        <td>龍虎石斑魚</td>
+                                        <td align="right">90</td>
+                                        <td>萊爾富</td>
+                                        <td align="right">699</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <div id="reserve">
+            <div id="DIV1">
+
+                <h6><a href=table_filter.html>商品總覽&搜尋</a></h6>
+
+
+            </div>
+
+            <div id="DIV1">
+
+                <h2>類別</h2>
+                <hr>
+
+                <div id="DIV2">
+                    <h3><a href="products.html?category=主餐">主餐</a>&nbsp;<a href="products.html?category=配餐">配餐</a>&nbsp;<a href="products.html?category=麵包">麵包</a></h3>
+                </div>
+
+                <div id="DIV2">
+                    <h3><a href="products.html?category=甜品">甜品</a>&nbsp;<a href="products.html?category=冰品">冰品</a>&nbsp;<a href="products.html?category=飲料">飲料</a></h3>
+                </div>
+                <div id="DIV2">
+                    <h3><a href="products.html?category=酒類">酒類</a>&nbsp;<a href="products.html?category=零食">零食</a>&nbsp;<a href="products.html?category=泡麵">泡麵</a></h3>
+                </div>
+                <div id="DIV2">
+                    <h3><a href="products.html?category=雜貨">雜貨</a>
+                </div>
+
+            </div>
+
+            <div id="DIV1">
+                <h2>商店</h2>
+                <hr>
+                <div id="DIV2">
+                    <h3><a href="products.html?store=711">711</a>&nbsp;<a href="products.html?store=全家">全家</a></h3>
+                </div>
+                <div id="DIV2">
+                    <h3><a href="products.html?store=萊爾富">萊爾富</a>&nbsp;<a href="products.html?store=OK">OK</a></h3>
+                </div>
+
+            </div>
+            <div style="text-align: left">
+            </div>
+            <div style="clear:both;"></div>
+
+            <div id="DIV1">
+                <h2>討論度</h2>
+                <hr>
+                <div id="DIV2">
+                    <h3><a href="products.html?popularity_low=1&popularity_high=20">1-20</a>&nbsp;<a href="products.html?popularity_low=20&popularity_high=40">20-39</a>&nbsp;<a href="products.html?popularity_low=40&popularity_high=60">40-59</a></h3>
+                </div>
+                <div id="DIV2">
+                    <h3><a href="products.html?popularity_low=60&popularity_high=80">60-79</a>&nbsp;<a href="products.html?popularity_low=80&popularity_high=100000">80↑</a></h3>
+                </div>
+            </div>
+            <div style="text-align: left">
+            </div>
+            <div id="DIV1">
+                <h2>評分</h2>
+                <hr>
+                <div id="DIV2">
+                    <h3><a href="products.html?score_low=0&score_high=60">59↓</a>&nbsp;<a href="products.html?score_low=60&score_high=70">60-69</a>&nbsp;<a href="products.html?score_low=70&score_high=80">70-79</a></h3>
+                </div>
+                <div id="DIV2">
+                    <h3><a href="products.html?score_low=80&score_high=90">80-89</a>&nbsp;<a href="products.html?score_low=90&score_high=1000">90↑</a></h3>
+                </div>
+            </div>
+            <div style="text-align: left">
+            </div>
+            <div style="clear:both;"></div>
+
+
+        </div>
+    </section>
+</body>
+<footer>
+    <div id="bottom">
+        <hr size=0.1 color="#D0D0D0">
+        <p class="footer_font">&copy; 2020 Jingyan Dai.Chiachun Sun</p>
+    </div>
+</footer>
+<script>
+    function category_click(btn) {
+        alert(btn.value);
+    }
+</script>
+
+</html>
